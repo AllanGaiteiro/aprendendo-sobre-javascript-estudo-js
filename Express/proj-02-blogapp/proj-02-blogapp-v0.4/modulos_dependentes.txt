@@ -1,0 +1,34 @@
+
+///dependencias
+        
+    Express 
+            
+        ///npm install --save express
+
+        Descriçao:
+
+    //////////////
+        
+    Express-handlebars
+        
+        ///npm install --save express-handlebars
+
+        Descriçao:
+
+    //////////////
+
+    Body-Parser
+        
+        ///npm install body-parser --save
+
+        Descriçao:
+
+    //////////////
+
+    Mongose
+        
+        ///npm install mongoose
+
+        Descriçao:
+
+    //////////////

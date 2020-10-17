@@ -1,0 +1,21 @@
+body{
+    margin: 0px;
+}
+
+#Principal{
+    margin: auto;
+    width: 800px;
+    padding: 90px;
+    
+}
+#dadosPf{
+    position: absolute;
+    visibility: visible;
+    margin-top: 90px;
+}
+#dadosPj{
+    position: absolute;
+    visibility: hidden;
+    margin-top: 90px;
+
+}

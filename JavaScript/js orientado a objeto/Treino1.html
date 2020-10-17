@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>treino</title>
+</head>
+<body>
+    
+
+
+    <script>
+        /// classe do objeto pai de carros e motos
+        function Autos(nome,ano,cor) {
+            this.nome = nome
+            this.ano = ano
+            this.cor = cor
+        }
+        //// metodo do obeto par /////
+        Autos.prototype.returnDados = function (){
+            return 'nome do carro: ' + this.nome + ', ano: ' + this.ano + ', cor: '+ this.cor
+        }
+        ///// Classe Objeto filho
+        function Carros(nome,ano,cor,rodas,preco){
+            //// chamando o obeto pai e enviando os atributos gerai
+            Autos.call(this,nome,ano,cor)
+            this.rodas = rodas
+            this.preco = preco
+        }
+        ////// Declarando de Objeto filho recebera os prototypes do pai
+        Carros.prototype = Object.create(Autos.prototype)
+
+        //// criando o Objeto 
+        var carro1 = new Carros('ford',2019,'black', '4 rodas', 45.000)
+
+        console.log(carro1.returnDados())
+
+
+    </script>
+</body>
+</html>

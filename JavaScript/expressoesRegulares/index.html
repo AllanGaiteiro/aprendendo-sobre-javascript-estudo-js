@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>expresRegul</title>
+</head>
+
+<body>
+
+    <script type="text/javascript">
+        /// (15+10-9*7/2)espessao matematica
+
+        var texto = `    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis nulla nemo alias rerum repellendus dolorem rem nam quod aspernatur id praesentium, quo earum, ex sed corporis quam? Enim, exercitationem 2perspiciatis?
+
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo iure pariatur possimus delectus laudantium assumenda aperiam id. Culpa, accusamus. Quo ad velit nisi similique officia voluptatem qui blanditii1s, repellendus vitae.
+
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate unde sint error qui, repudiandae eaque nostrum officiis quas corporis el3igendi assumenda blanditiis harum, deserunt dolorum maiores aspernatur enim veniam animi?
+        
+        `
+        var texto2 = `allangaiteiro@gmail.com.br`
+        //// espresao regular    
+
+        var re = /.+\@.*\..*\.br/gmi
+        //var re = /[abc]/gmi
+        /// metodos   
+        ///\d = digito  
+        ///i =  deixa maiusculas e minusculas iguais 
+        ///g = busca global /// m = multilinha 
+        //// [] = conjuntos de letras ou simbolos 
+        /// [^ ]= nao quer a ltera do lado dele 
+        
+        /// . = procura todos os simbolos das letras
+        /// * = repetiçao de zero ou mais veze
+        /// + = repetiçao de no minimo 1 vez
+        ////var resultado = re.exec(texto) /// nao aceita os metodos 
+        //var resultado = re.test(texto2)
+        var resultado = texto2.match(re)
+
+        console.log(resultado)
+    </script>
+</body>
+
+</html>

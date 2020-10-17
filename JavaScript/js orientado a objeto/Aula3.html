@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS orientaçao Obeto</title>
+</head>
+
+<body>
+    <script>
+        /*        
+        /// Objeto ou Classe
+        Pessoa
+            ///Atributos
+            Name  // var 
+            idade // var
+            endereço // var
+            /// metodos = acoes do objeto
+            andar // func
+            parar // func
+            subir  // func
+            decer // func
+            comer // func
+        */
+
+        ////// Classe
+        function Pessoa(nome, idade) {
+            this.nome = nome
+            this.idade = idade
+            this.endereço
+        }
+        Pessoa.prototype.retornaDados = function () {
+            return `Nome: ${this.nome}, Idade: ${this.idade}`/*, Tipo: ${this.tipo}, Documento: ${this.cpf}`*/
+        }
+
+
+        /*/// Classe pai classe filha 
+        Pessoa -> Nome, Idade
+             PessoaFisica -> CPF
+             PessoaJuridica -> CNPJ
+        */
+       //////Pessoa Fisica 
+        function PessoaFisica(nome, idade, cpf) {
+            Pessoa.call(this, nome, idade)
+            this.tipo = 'Fisica'
+            this.cpf = cpf
+        }
+        PessoaFisica.prototype = Object.create(Pessoa.prototype)
+        PessoaFisica.prototype.construtor = PessoaFisica
+        //// rescrever o metodo
+        PessoaFisica.prototype.retornaDados = function (){
+            return Pessoa.prototype.retornaDados.call(this) + ` Tipo: ${this.tipo}, Documento: ${this.cpf}`
+        }
+
+        /////// Pessoa Juridica
+        function PessoaJuridica(nome, idade, cnpj) {
+            Pessoa.call(this, nome, idade)
+            this.tipo = 'Juridica'
+            this.cnpj = cnpj
+        }
+        PessoaJuridica.prototype = Object.create(Pessoa.prototype)
+        PessoaJuridica.prototype.construtor = PessoaJuridica
+        //// rescrever o metodo
+        PessoaJuridica.prototype.retornaDados = function (){
+            return Pessoa.prototype.retornaDados.call(this) + ` Tipo: ${this.tipo}, Documento: ${this.cnpj}`
+        }
+
+
+
+        //// Objetos
+        var pessoa1 = new PessoaFisica('João', 25, '12123231')
+        var pessoa2 = new PessoaJuridica('Forplas', 20, '123.21321.44')
+
+        console.log('pessoa 1 -> ' + pessoa1.retornaDados())
+
+        console.log('pessoa 2 -> ' + pessoa2.retornaDados())
+
+
+    </script>
+</body>
+
+</html>

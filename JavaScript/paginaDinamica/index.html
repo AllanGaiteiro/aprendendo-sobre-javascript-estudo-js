@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>PagDinamic</title>
+    <script src="js/script.js"></script>
+</head>
+
+<body onload="inicPag()">
+    <form id="formDados" action="">
+        <div id="Principal">
+            <section>
+                <label for="">Tipo:</br>
+                    <input type="radio" name="tp" id="pf" checked onclick="selecionaTp('pf')">
+                    Pessoa Fisica</br>
+                    <input type="radio" name="tp" id="pj" onclick="selecionaTp('pj')">
+                    Pessoa Juridica</br>
+                </label>
+            </section>
+            <section id="dadosPf">
+                <label for="nomePf">Nome:</br>
+                    <input id="nomePf" type="text" name="nome" placeholder="seu nome">
+                </label></br>
+                <label for="cpf">CPF:</br>
+                    <input id="cpf" type="text" name="CPF" placeholder="seu CPF">
+                </label></br>
+                <label for="rg">RG:</br>
+                    <input id="rg" type="text" name="RG" placeholder="seu RG">
+                </label></br>
+            </section>
+
+            <section id="dadosPj">
+                <label for="nomePj">Razao Social:</br>
+                    <input id="nomePj" type="text" name="nome" placeholder="nome da sua empresa">
+                </label></br>
+                <label for="cnpj">CNPJ:</br>
+                    <input id="cnpj" type="text" name="CNPJ" placeholder="cnpj da sua empresa">
+                </label></br>
+                <label for="incEst">Incriçao Estadual:</br>
+                    <input id="incEst" type="text" name="IE" placeholder="inscrição estadual">
+                </label></br>
+            </section>
+        </div>
+    </form>
+
+</body>
+
+</html>

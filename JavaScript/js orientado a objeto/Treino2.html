@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Treino2</title>
+</head>
+<body>
+    <script>
+        /// Clase Pai
+        console.time('time')
+        function Animal(tipo,idade,cor) {
+            this.tipo = tipo
+            this.idade = idade
+            this.cor = cor
+        }
+        //// metodo da classe pai
+        Animal.prototype.informaçoes = function (){
+            return `${this.tipo}, idade: ${this.idade},cor: ${this.cor}`
+        }
+        //// classe filho
+        function Mamifero(tipo,idade,cor,comoMove,pele){
+            /// chamando chamando e entregando atributos a  classe Pai
+            Animal.call(this,tipo, idade, cor)
+            this.comoMove = comoMove
+            this.pele = pele
+        }
+        //// metodos de filho sao iguas ao metododos da classe pai
+        Mamifero.prototype = Object.create(Animal.prototype)
+        ///// um acrecimo ao metodo da Classe Pai 
+        Mamifero.prototype.informaçoes = function (){
+            ///// Chamando o prototype da classe Pai mais as informaçoes deste proto type
+            return Animal.prototype.informaçoes.call(this) + `, Move-se: ${this.comoMove}, em sua pele tem: ${this.pele}`    
+        }
+
+        /////Clase filho
+        function Aves(tipo,idade,cor,comoMove,pele) {
+            //// Chamando a classe Pai
+            Animal.call(this,tipo,idade,cor)
+            this.comoMove = comoMove
+            this.pele = pele
+        }
+        Aves.prototype = Object.create(Animal.prototype)
+        /// Um acrescimo ao metodo da Classe pai
+        Aves.prototype.informaçoes = function () {
+            ///// Chamando o prototype da classe Pai mais as informaçoes deste proto type
+            return Animal.prototype.informaçoes.call(this) + `, Move-se: ${this.comoMove}, em sua pele tem: ${this.pele}`  
+            
+        }
+        /// criando objetos
+        cao = new Mamifero('bader-colie','2 anos', 'preto','andar','pelo')
+        passaro = new Aves('pica-pau', '6 meses', 'vermelho','voar','pena')
+
+        console.log(cao.informaçoes())
+        console.log(passaro.informaçoes())
+        console.timeEnd('time')
+    </script>
+</body>
+</html>

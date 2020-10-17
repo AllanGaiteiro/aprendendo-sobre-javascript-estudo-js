@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS orientaçao Obeto</title>
+</head>
+
+<body>
+    <script>
+        /*        
+        /// Objeto ou Classe
+        Pessoa
+            ///Atributos
+            Name  // var 
+            idade // var
+            endereço // var
+            /// metodos = acoes do objeto
+            andar // func
+            parar // func
+            subir  // func
+            decer // func
+            comer // func
+        */
+
+        ////// Classe
+       function Pessoa(nome,idade) {
+           this.nome = nome
+           this.idade = idade
+           this.endereço
+       }
+       Pessoa.prototype.mudarIdade = function (idade){
+           this.idade = idade
+       }
+       //// Objeto
+       var pessoa1 = new Pessoa('João',25)
+       var pessoa2 = new Pessoa('Jose',29)
+
+        console.log('pessoa 1 -> ' + pessoa1.nome + ' idade =' + pessoa1.idade)
+        pessoa1.mudarIdade(55)
+        console.log('pessoa 2 -> ' + pessoa2.nome + ' idade =' + pessoa2.idade)
+        console.log('pessoa 1 -> ' + pessoa1.nome + ' idade =' + pessoa1.idade)
+
+    </script>
+</body>
+
+</html>

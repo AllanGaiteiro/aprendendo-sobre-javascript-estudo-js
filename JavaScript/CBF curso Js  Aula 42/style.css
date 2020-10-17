@@ -1,0 +1,21 @@
+
+.container{
+    width: 600px;
+    margin: auto;
+}
+table{
+    border-collapse: collapse;
+}
+table,td,tr,th{
+    border: 1px solid black;
+    font-size: 2rem;
+}
+h1{
+    font-size: 3rem;
+}
+form{
+    display: block;
+    margin-bottom: 50px;
+
+}
+

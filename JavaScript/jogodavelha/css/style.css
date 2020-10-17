@@ -1,0 +1,37 @@
+section{
+    width: 400px;
+    margin: auto;
+}
+
+#dvJogo{
+    width: 160px;
+    height: 160px;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+}
+.posJogo{
+    width: 50px;
+    height: 50px;
+    margin: 0px;
+    padding: 0px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    border: 1px solid black;
+    
+}
+#p1,#p2,#p3{
+    border-top: none;
+}
+#p1,#p4,#p7{
+    border-left: none;
+}
+#p3,#p6,#p9{
+    border-right: none;
+}
+#p7,#p8,#p9{
+    border-bottom: none;
+}

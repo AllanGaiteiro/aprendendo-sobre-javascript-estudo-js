@@ -1,0 +1,6 @@
+.cor_Red{
+    color: red;
+}
+.cor_Red:hover{
+    color: blue;
+}
